@@ -32,11 +32,12 @@ const SearchExercises = ({
   const handleSearch = async () => {
     if (search) {
       const exercisesData = await fetchData(
-        'https://exercisedb.p.rapidapi.com/exercises/',
+        'https://exercisedb.p.rapidapi.com/exercises?limit=100&offset=0',
+        // 'https://exercisedb.p.rapidapi.com/exercises',
         exerciseOptions
       )
 
-      console.log(exercisesData);
+      console.log('SearchExercises: ', exercisesData);
 
       const searchedExercises = exercisesData.filter(
         (exercise) =>
